@@ -4,19 +4,14 @@ import addIcon from "../../assets/images/add_icon.png";
 const AddTask = ({ handleAdd }) => {
   const [task, setTask] = useState("");
 
-  const handleAddtask = (e) => {
-    e.preventDefault();
+  const handleAddtask = (event) => {
+    event.preventDefault();
     const newTask = {
       desc: task,
       isCompleted: false,
     };
     setTask("");
     handleAdd(newTask);
-  };
-
-  const handleInputChange = (e) => {
-    let x = e.target.value;
-    setTask(x);
   };
 
   return (
@@ -30,7 +25,7 @@ const AddTask = ({ handleAdd }) => {
         placeholder="Write your next task"
         value={task}
         name="todo"
-        onChange={handleInputChange}
+        onChange={(event) => setTask(event.target.value)}
         className="h-full bg-[#1f2937] rounded-lg text-white text-sm w-full px-4 mr-4 placeholder-[]"
         style={{ outline: "none" }}
       />

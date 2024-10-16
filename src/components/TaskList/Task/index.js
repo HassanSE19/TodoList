@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { editIcon } from "../../../assets/images/svg/edit";
-import { binIcon } from "../../../assets/images/svg/bin";
+import { editIcon } from "../../../assets/svg/edit";
+import { binIcon } from "../../../assets/svg/bin";
 
 const Task = ({
   task,
@@ -11,10 +11,10 @@ const Task = ({
 }) => {
   const [allowEdit, setAllowEdit] = useState(false);
 
-  const handleTaskEdit = (e) => {
-    e.preventDefault();
+  const handleTaskEdit = (event) => {
+    event.preventDefault();
     setAllowEdit(false);
-    handleEdit(e.target[0].value, index);
+    handleEdit(event.target[0].value, index);
   };
 
   return allowEdit ? (
