@@ -1,15 +1,14 @@
 import React from "react";
-// import style from "./style.module.css";
 
-const overview = () => {
+const overview = ({ totalTasks, completedTasks }) => {
   return (
-    <div className="h-2/6 mb-8 border-2 rounded-xl px-3 flex justify-around items-center">
-      <div>
-        <p className="text-3xl">Task Done</p>
-        <p className="text-2xl">Keep it up</p>
+    <div className="mb-[38px] border-[#c2b39a] border rounded-xl p-3 flex justify-around items-center">
+      <div className="mr-4">
+        <p className="text-[33px] tracking-[1px] leading-[34px]">Task Done</p>
+        <p className="text-[24px] tracking-[1px] leading-[34px]">Keep it up</p>
       </div>
-      <div className="h-32 w-32 text-center flex items-center text-5xl bg-lime-400 text-center justify-center rounded-[50%]">
-        {"0/0"}
+      <div className="h-[150px] w-[150px] text-center flex items-center text-5xl bg-[#88ab33] text-center justify-center rounded-[50%]">
+        {`${completedTasks}/${totalTasks}`}
       </div>
     </div>
   );
